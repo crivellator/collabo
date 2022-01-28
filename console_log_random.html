@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function azione() {
+                var numerocasuale = Math.floor(Math.random() * 10);
+                console.log(numerocasuale);
+                // per l'inner html del getElementsByClassName visto che lo prende da un array, ci va specificato l'indice
+                document.getElementsByClassName("output")[0].innerHTML = numerocasuale;
+            }
+            function verificalunghezz() {
+                var stringa = document.getElementsByClassName("dentro")[0].value.length;
+                if ( stringa > 5) {
+                    document.getElementsByClassName("output2")[0].innerHTML = "TROPPO LUNGO!";
+                } else { 
+                    document.getElementsByClassName("output2")[0].innerHTML = "OK";
+                }
+            }
+        </script>
+        <style type="text/css">
+            .eheh {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="eheh">
+            <button onclick="azione()">
+                => PREMI <=                
+            </button>
+            <p class="output"></p>
+            <input class="dentro" type="text" maxlength="10">
+            <button onclick="verificalunghezz()">
+                => VERIFICA LUNGHEZZA <=
+            </button>
+            <p class="output2"></p>
+        </div>
+    </body>
+</html>
